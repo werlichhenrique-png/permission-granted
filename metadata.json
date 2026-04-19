@@ -1,0 +1,6 @@
+{
+  "name": "Permission Granted",
+  "description": "A single-session terminal interface that confronts procrastination and grants you permission to act.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
