@@ -5,6 +5,7 @@ interface TypewriterProps {
   speed?: number;
   delay?: number;
   onComplete?: () => void;
+  onUpdate?: () => void;
   className?: string;
 }
 
@@ -24,7 +25,7 @@ export const Typewriter = memo(({
       setIsStarted(true);
     }, delay);
     return () => clearTimeout(startTimeout);
-  }, [delay, text]); // Reset if text changes
+  }, [delay, text]);
 
   useEffect(() => {
     if (!isStarted) return;
@@ -42,7 +43,7 @@ export const Typewriter = memo(({
     }, speed);
 
     return () => clearInterval(interval);
-  }, [isStarted, text, speed]); // Removed onComplete to prevent unnecessary restarts
+  }, [isStarted, text, speed]);
 
   return (
     <div className={`${className} whitespace-pre-wrap`}>
