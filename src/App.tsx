@@ -82,12 +82,6 @@ export default function App() {
     []
   );
 
-  // When the seal becomes visible, wait 3s then transition to POST_PERMISSION
-  useEffect(() => {
-    if (!sealVisible) return;
-    const timer = setTimeout(() => setScreen('POST_PERMISSION'), 3000);
-    return () => clearTimeout(timer);
-  }, [sealVisible]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -521,7 +515,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* DIAGNOSIS — text first, seal animates in after typewriter completes */}
+          {/* DIAGNOSIS — text first, seal + full content animate in after typewriter completes */}
           {screen === 'DIAGNOSIS' && (
             <motion.div key="diagnosis" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
               <div className="text-base sm:text-[17px]">
@@ -533,8 +527,8 @@ export default function App() {
                 />
               </div>
 
-              <AnimatePresence>
-                {sealVisible && (
+              {sealVisible && (
+                <>
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -554,8 +548,35 @@ export default function App() {
                       </span>
                     </div>
                   </motion.div>
-                )}
-              </AnimatePresence>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9, duration: 0.7 }}
+                    className="space-y-6"
+                  >
+                    <div className="border border-[#00ff41]/40 p-3 text-center">
+                      <p className="text-xs sm:text-sm tracking-wider opacity-80">{t.postPermission.urgencyLine}</p>
+                    </div>
+
+                    <div className="text-center">
+                      <button
+                        onClick={generateResultShareLink}
+                        className="border border-[#00ff41] px-6 py-2 hover:bg-[#00ff41] hover:text-black transition-all font-mono text-xs sm:text-sm uppercase font-bold"
+                      >
+                        {resultShareCopied ? `✓ ${t.postPermission.linkCopied}` : t.footer.shareResult}
+                      </button>
+                    </div>
+
+                    <div className="text-[10px] opacity-40 text-right leading-tight font-mono">
+                      {t.diagnosis.emissionLabel}: {emissionDate} — {emissionTime}<br />
+                      {t.diagnosis.noAppeal}<br />
+                      {t.diagnosis.authCode} {sessionId}<br />
+                      <span className="opacity-70 tracking-[0.15em]">{ASCII_BARCODE}</span>
+                    </div>
+                  </motion.div>
+                </>
+              )}
             </motion.div>
           )}
 
