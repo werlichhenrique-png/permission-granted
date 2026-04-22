@@ -337,6 +337,7 @@ export default function App() {
   const statusDone = ['DIAGNOSIS', 'POST_PERMISSION', 'VIEW_SHARED'].includes(screen);
   const showFullFooter = ['POST_PERMISSION', 'DIAGNOSIS', 'ALREADY_GRANTED', 'SHARE_FRIEND'].includes(screen);
   const showMinimalFooter = ['DECISION', 'TIME', 'WAITING'].includes(screen);
+  const showAboutFooter = screen === 'ABOUT';
 
   // Formatted emission date
   const emissionDate = new Date().toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US');
@@ -775,12 +776,6 @@ export default function App() {
                   {t.about.portfolioLabel}
                 </a>
               </div>
-              <button
-                onClick={() => setScreen(previousScreen)}
-                className="text-xs opacity-40 hover:opacity-100 uppercase block"
-              >
-                {t.about.back}
-              </button>
             </motion.div>
           )}
 
@@ -834,6 +829,24 @@ export default function App() {
             className="footer-btn text-red-500/25 hover:text-red-500 uppercase font-bold"
           >
             {t.footer.restart}
+          </button>
+        </div>
+      )}
+
+      {/* About footer */}
+      {showAboutFooter && (
+        <div className="footer-term crt-glow shrink-0">
+          <button
+            onClick={handleReset}
+            className="footer-btn text-red-500/40 hover:text-red-500 font-bold whitespace-nowrap"
+          >
+            {t.footer.restart}
+          </button>
+          <button
+            onClick={() => setScreen(previousScreen)}
+            className="footer-option footer-btn whitespace-nowrap"
+          >
+            {t.about.back}
           </button>
         </div>
       )}

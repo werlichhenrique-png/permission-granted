@@ -76,7 +76,7 @@ export const translations = {
     alreadyGranted: {
       verdictRegistered: 'VEREDITO REGISTRADO —',
       youHavePermission: 'Você já tem permissão para:',
-      viewVeredito: 'VER MEU VEREDITO',
+      viewVeredito: '[ VER MEU VEREDITO ]',
       archiveLabel: 'ARQUIVO_HISTÓRICO',
       blockedTitle: 'SESSÃO BLOQUEADA: PERMISSÃO JÁ EMITIDA',
       blockedBody: 'SÓ É PERMITIDO REINICIAR APÓS COMPLETAR A AÇÃO.',
@@ -198,7 +198,7 @@ export const translations = {
     alreadyGranted: {
       verdictRegistered: 'VERDICT REGISTERED —',
       youHavePermission: 'You already have permission to:',
-      viewVeredito: 'VIEW MY VERDICT',
+      viewVeredito: '[ VIEW MY VERDICT ]',
       archiveLabel: 'HISTORICAL_FILE',
       blockedTitle: 'SESSION BLOCKED: PERMISSION ALREADY ISSUED',
       blockedBody: 'RESTART IS ONLY ALLOWED AFTER COMPLETING THE ACTION.',
