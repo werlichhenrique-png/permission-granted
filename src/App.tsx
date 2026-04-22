@@ -767,7 +767,7 @@ export default function App() {
                 <p className="text-base font-bold">{t.about.author}</p>
                 <p className="text-sm opacity-50">{t.about.role}</p>
                 <a
-                  href="https://www.linkedin.com/in/henrique-werlich"
+                  href="https://www.linkedin.com/in/henriquewerlich/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-2 border border-[#00ff41] px-4 py-2 text-xs hover:bg-[#00ff41] hover:text-black transition-all uppercase font-bold"
@@ -803,6 +803,14 @@ export default function App() {
                 className="footer-option footer-btn whitespace-nowrap"
               >
                 {resultShareCopied ? `✓ ${t.postPermission.linkCopied}` : t.footer.shareResult}
+              </button>
+            )}
+            {screen === 'ALREADY_GRANTED' && (
+              <button
+                onClick={handleViewVeredito}
+                className="footer-option footer-btn whitespace-nowrap"
+              >
+                {t.alreadyGranted.viewVeredito}
               </button>
             )}
             <button
