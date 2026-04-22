@@ -51,12 +51,12 @@ export const runDiagnosis = async (
   let permission: string;
 
   if (lang === 'en') {
-    mirror = `You say you want to "${decision}". You claim to have been "reflecting" on this for ${timeLower}. The truth is that system diagnostics indicate your "reflection" is just an infinite loop of fear disguised as caution. Every second spent thinking is a second of life wasted in sterile simulation.`;
-    confrontation = `You claim to be waiting for "${waitingLower}". That is an escape variable. What you're waiting for will not change the real outcome — it will only delay the inevitable.`;
+    mirror = `You say you want to "${decision}". You've been "thinking about this" for ${timeLower}. That's not reflection — it's fear using the name of caution so it won't be recognized. Every week, the loop restarts. And you already know how it ends.`;
+    confrontation = `You claim to be waiting for "${waitingLower}". That condition will never be fully met. It's the same mechanism: creating a criterion that justifies inaction. And it works — because you're still here.`;
     permission = `YOU HAVE PERMISSION. IT'S TIME TO ACT.`;
   } else {
-    mirror = `Você diz que quer "${decision}". Você afirma estar "refletindo" sobre isso há ${timeLower}. A verdade é que diagnósticos de sistema indicam que sua "reflexão" é apenas um loop infinito de medo disfarçado de cautela. Cada segundo gasto pensando é um segundo de vida desperdiçado em simulação estéril.`;
-    confrontation = `Você alega estar esperando por "${waitingLower}". Isso é uma variável de escape. O que você espera não vai mudar o resultado real, apenas adiar o inevitável.`;
+    mirror = `Você diz que quer "${decision}". Já faz ${timeLower} que você está "pensando nisso". Isso não é reflexão — é medo usando o nome de cautela para não ser reconhecido. A cada semana, o loop recomeça. E você já sabe como termina.`;
+    confrontation = `Você alega estar esperando por "${waitingLower}". Essa condição nunca vai estar totalmente satisfeita. É o mesmo mecanismo: criar um critério que justifique a inação. E funciona — porque você ainda está aqui.`;
     permission = `VOCÊ TEM PERMISSÃO. É HORA DE AGIR.`;
   }
 
